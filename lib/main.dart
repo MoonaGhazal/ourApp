@@ -23,6 +23,7 @@ class OurApp extends StatelessWidget {
         title: "OurApp",
         
         home: SplashScreen(),
+        debugShowCheckedModeBanner: false,
     );
   }
 }
