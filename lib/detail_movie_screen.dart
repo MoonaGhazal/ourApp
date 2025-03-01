@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors_in_immutables
+
 import 'package:flutter/material.dart';
 
 class DetailMovieScreen extends StatelessWidget {
@@ -6,58 +8,66 @@ class DetailMovieScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Stack(
-            children: [
-              Image.asset("assets/Video.png",
-                  width: double.infinity, height: 250, fit: BoxFit.fill),
-              Positioned(
-                top: 40,
-                left: 10,
-                child: IconButton(
-                    icon: const Icon(
-                      Icons.arrow_back,
-                      color: Colors.white,
-                    ),
-                    onPressed: () {}),
+      body: Container(
+        
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Image.asset("assets/Video.png",
+                width: double.infinity, 
+                height: 250, 
+                fit: BoxFit.fill
               ),
-              Positioned(
-                top: 40,
-                right: 10,
-                child: IconButton(
-                    icon: const Icon(
-                      Icons.more_horiz,
+
+
+            Column(
+              mainAxisSize:MainAxisSize.min, //عشان تكون على قد المحتويات مش الشاشه كلها
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.play_circle, 
+                    size: 45, 
+                    color: Colors.white
+                  ),
+                ),
+
+
+                Text(
+                  "Play Trailer",
+                  style: TextStyle(
                       color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600
                     ),
-                    onPressed: () {}),
+                ),
+              ],
+            ),
+
+
+            //back
+            Positioned(
+              top: 40,
+              left: 10,
+              child: Icon(
+                Icons.arrow_back, 
+                color: Colors.white
               ),
-            ],
-          ),
-          Text(
-            "Spiderman: No Way Home",
-            style: TextStyle(fontSize: 35, fontWeight: FontWeight.w500),
-          ),
-          SizedBox(height: 8),
-          Icon(
-            Icons.star,
-            color: Color(0xffFFC319),
-            size: 30,
-          ),
-          SizedBox(height: 8),
-          Icon(
-            Icons.bookmark,
-            color: Color(0xff202020),
-            size: 30,
-          ),
-          Text(
-            "9.1/10 IMDb",
-            style: TextStyle(
-                color: Color(0xff9C9C9C),
-                fontSize: 16,
-                fontWeight: FontWeight.w400),
-          ),
-        ],
+            ),
+
+
+            //more
+            Positioned(
+              top: 40,
+              left: 10,
+              child: Icon(
+                Icons.more_horiz, 
+                color: Colors.white
+              ),
+            ),
+
+          ],
+        ),
       ),
     );
   }
