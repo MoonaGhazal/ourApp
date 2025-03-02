@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
+import 'package:our_app/widget/cast_widget.dart';
 import 'package:our_app/widget/category_widget.dart';
 import 'package:our_app/widget/movie_info_widget.dart';
 
@@ -116,7 +117,38 @@ class DetailMovieScreen extends StatelessWidget {
                         color: Color(0xff9C9C9C),
                       ),
                     ),
-                    SizedBox(height: 50),
+                    SizedBox(height: 20),
+                    Text(
+                      "Cast",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xff110E47),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 120,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          CastWidget(
+                              name: "Tom Holland",
+                              castImage: "assets/image 10.png"),
+                          SizedBox(width: 20),
+                          CastWidget(
+                              name: "Zendaya",
+                              castImage: "assets/image 11.png"),
+                          SizedBox(width: 20),
+                          CastWidget(
+                              name: "Benedict ",
+                              castImage: "assets/image 12.png"),
+                          SizedBox(width: 20),
+                          CastWidget(
+                              name: "Jacon Batalon",
+                              castImage: "assets/image 13.png"),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
