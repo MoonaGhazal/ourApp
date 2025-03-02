@@ -99,6 +99,26 @@ class DetailMovieScreen extends StatelessWidget {
                         MovieInfoWidget(title: "Rating", value: "PG-13"),
                       ],
                     ),
+                    SizedBox(height: 30),
+                    Text(
+                      "Description",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        color: Color(0xff110E47),
+                      ),
+                    ),
+                    Text(
+                      "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.",
+                      style: TextStyle(
+                        height: 1.5,
+                        fontSize: 12,
+                        color: Color(0xff9C9C9C),
+                      ),
+                    ),
+                    SizedBox(height: 50),
+                    
+
                   ],
                 ),
               ),
