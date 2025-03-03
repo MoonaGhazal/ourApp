@@ -1,28 +1,17 @@
-// main.dart
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:our_app/firebase_options.dart';
-import 'package:our_app/splash_screen.dart';
+import 'package:our_app/detail_movie_screen.dart';
 
-void main ()async{
-WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-
-
-runApp(OurApp());  
+void main() {
+  runApp(MoviesApp());
 }
 
-
-class OurApp extends StatelessWidget {
-  const OurApp({super.key});
+class MoviesApp extends StatelessWidget {
+  const MoviesApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: "OurApp",
-        
-        home: SplashScreen(),
+      debugShowCheckedModeBanner: false,
+      home: DetailMovieScreen(),
     );
   }
 }
