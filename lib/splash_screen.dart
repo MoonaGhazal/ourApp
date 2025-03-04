@@ -9,6 +9,11 @@ class SplashScreen extends StatelessWidget {
                  Movie(title: "Eternals", image: "assets/image_3.png", rate: "9.5/10 IMDb"),
                  Movie(title: "Shang-Chi", image: "assets/Poster.png", rate: "8.1/10 IMDb"),
                        ];
+  List<Movie>movieListTwo =[
+                 Movie(title: "Venom Let There Be Carnage", image: "assets/Image.png", rate: "6.4/10 IMDb"),
+                 Movie(title: "The King’s Man", image: "assets/Image_5.png", rate: "8.4/10 IMDb"),
+
+  ];                     
  
   @override
   Widget build(BuildContext context) {
@@ -35,6 +40,13 @@ class SplashScreen extends StatelessWidget {
                               ), 
                               SizedBox(height: 4,),
                               Text("Popular",style: TextStyle(fontWeight:FontWeight.bold , fontSize:16,color: Color(0xFF110E47),fontFamily: "Merriweather", ),), 
+                              SizedBox(height: 120,
+                                child: ListView.builder(
+                                        scrollDirection: Axis.vertical,
+                                        itemCount: 10,
+                                        itemBuilder: (context,index){return FirstCard(title: movieListTwo[index].title, image: movieListTwo[index].image, rate: movieListTwo[index].rate);}
+                                        ,),
+                                ),    
           ],
         ),
       ),

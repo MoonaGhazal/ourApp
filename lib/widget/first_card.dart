@@ -7,6 +7,7 @@ class FirstCard extends StatelessWidget {
    String image;
    String starImage ="assets/Star.png";
    String rate;
+   String clockImage ="assets/59252.png";
   
   @override
   Widget build(BuildContext context) {
@@ -26,8 +27,6 @@ class FirstCard extends StatelessWidget {
                    ],
                 ),    
                    ],
-                  
-        
         ),
       );
   }     
