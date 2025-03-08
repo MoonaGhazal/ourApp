@@ -1,5 +1,6 @@
 // widget/second_card.dart
 import 'package:flutter/material.dart';
+import 'package:our_app/widget/genre_container.dart';
 
 class SecondCard extends StatelessWidget {
   const SecondCard({super.key,required this.title,required this.image,required this.rate,required this.genre, required this.hours});
@@ -10,9 +11,11 @@ class SecondCard extends StatelessWidget {
   final String hoursImage ="assets/59252.png";
   final String hours;
   final List <String> genre;
+  
    
   @override
   Widget build(BuildContext context) {
+ 
     return  SizedBox( width: double.infinity,
       child: Row(
              crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,9 +28,10 @@ class SecondCard extends StatelessWidget {
                           child:
                             Column( 
                            crossAxisAlignment: CrossAxisAlignment.start,
-                           mainAxisAlignment: MainAxisAlignment.start,
+                          
                             children: [
-                              Text(title,style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Colors.black),maxLines: 2,overflow: TextOverflow.ellipsis,),
+                              SizedBox(width: 117,
+                                child: Text(title,style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold,color: Colors.black,),maxLines: 2,overflow: TextOverflow.ellipsis,)),
                                                             
                                        SizedBox(height: 10,),
                                        Row(
@@ -36,12 +40,20 @@ class SecondCard extends StatelessWidget {
                                             SizedBox(width: 5,),
                                             Text(rate,style: TextStyle(fontSize: 12,color: Color(0xFF9C9C9C)),maxLines: 1,overflow: TextOverflow.ellipsis,),
                                                    ], ),  
-                                            SizedBox(height: 5,),       
+                                            SizedBox(height: 5,),  
+                                            Wrap(
+                                              spacing: 5,
+                                               children: [
+                                                  for(int i= 0 ; i< genre.length ; i++)
+                                                   (GenreContainer(genreText: genre[i])),],
+                                                        ),  
+                                            SizedBox(height: 5,),    
                                              Row(
                                                children: [
                                                  Image.asset(hoursImage,width: 14,height: 14,),
-                                                 SizedBox(width: 5,),
-                                                 Text(hours,style: TextStyle(fontSize: 12,color: Color(0xFF9C9C9C)),maxLines: 1,overflow: TextOverflow.ellipsis,),
+                                                 SizedBox(width: 3,),
+                                                 Text(hours,style: TextStyle(fontSize: 12,color: Color(0xFF000000)),maxLines: 1,overflow: TextOverflow.ellipsis,),
+                                                                                                   //background: #000000;
 
                                                ],
                                              ),

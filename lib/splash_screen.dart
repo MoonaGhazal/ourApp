@@ -14,9 +14,9 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   List<Results>movieList =[];
-  List<String>movieNames =["Spider-Man: No Way Home","Eternals","Shang-Chi"];
+  List<String>movieNames =["Spider-Man: No Way Home","Eternals","Shang-Chi and the Legend of the Ten Rings"];
   List<Movie>movieListTwo =[
-                            Movie(title: "Venom Let There Be Carnage", image: "assets/Image.png", rate: "6.4/10 IMDb", hours: "1h 37m", genre: ["HORROR","MYSTERY","THRILLER"],),
+                            Movie(title: "Venom Let There Be Carnage", image: "assets/Image.png", rate: "6.4/10 IMDb", hours: "1h 47m", genre: ["HORROR","MYSTERY","THRILLER"],),
                             Movie(title: "The King's Man", image: "assets/Image_5.png", rate: "8.4/10 IMDb", hours: "2h 11m",genre: ["ACTION","FANTASY"],),
   ];
   @override
@@ -44,16 +44,17 @@ class _SplashScreenState extends State<SplashScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding:  EdgeInsets.only(left: 15,),
+          padding:  EdgeInsets.only(left: 14,),
           child: Column(
                      crossAxisAlignment: CrossAxisAlignment.start ,
                      children: [
                                 Text("Now Showing",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16,color: Color(0xFF110E47),fontFamily: "Merriweather",),),
-                                SizedBox( height: 283,
+                                SizedBox(height: 10,) ,
+                                SizedBox( height: 283,width: 375,
                                   child: ListView.builder( 
                                           scrollDirection: Axis.horizontal,
                                           itemCount: movieList.length,
-                                        padding: EdgeInsets.only(left: 3,),  
+                                        padding: EdgeInsets.only(left: 2,),  
                                           itemBuilder:(context,index){return Padding(
                                             padding: const EdgeInsets.only(right: 12,),
                                             child: FirstCard(title: movieList[index].title ??"Error", image: movieList[index].image, rate:"${movieList[index].voteAverage}/10 IMDb",),

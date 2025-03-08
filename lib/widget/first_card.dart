@@ -12,7 +12,7 @@ class FirstCard extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-      return SizedBox(width: 143,height: 283,
+      return SizedBox(width: 143,height: 265,
         child: Column( 
                 crossAxisAlignment: CrossAxisAlignment.start,
                    children: [
@@ -22,7 +22,7 @@ class FirstCard extends StatelessWidget {
                       Image.asset(image,height: 212,width: 143,fit: BoxFit.cover,),
                     ),
                     SizedBox(height: 5,),
-                    Text(title,style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold,fontFamily: "Mulish" , ),overflow: TextOverflow.ellipsis,maxLines:2 ,),
+                    Text(title,style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold,fontFamily: "Mulish" ,color: Color(0xFF000000) ),overflow: TextOverflow.ellipsis,maxLines:2 ,),
                     SizedBox(height: 5,),
                     Row(
                       children: [
