@@ -58,7 +58,7 @@ class Results {
   bool? video;
   double? voteAverage;
   int? voteCount;
-  String? hours;
+
 
   Results(
       {this.adult,
@@ -75,7 +75,7 @@ class Results {
       this.video,
       this.voteAverage,
       this.voteCount,
-      this.hours
+
                 });
 
   Results.fromJson(Map<String, dynamic> json) {
@@ -93,7 +93,7 @@ class Results {
     video = json['video'];
     voteAverage = json['vote_average'];
     voteCount = json['vote_count'];
-    hours = _getDuration(title);
+
   }
 
 String get image => "https://image.tmdb.org/t/p/w500$posterPath";
@@ -101,12 +101,3 @@ String get image => "https://image.tmdb.org/t/p/w500$posterPath";
   
 }
 
-String? _getDuration(String? title) {
-     Map<String, dynamic> movieDurations = {
-       "Spider-Man: No Way Home" : "2h 28m",
-       "Eternals" : "2h 36m",
-       "Shang-Chi" : "2h 12m",
-
-     };
-     return null;
-}
